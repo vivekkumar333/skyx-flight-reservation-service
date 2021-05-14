@@ -1,0 +1,36 @@
+# DB configuration
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/skyx_airlines_flight_reservation_db
+    username: root
+    password: mysql
+    
+# Hibernate Properties
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+# Spring Application Name Configuration 
+  application:
+    name: skyx-flight-reservation-service
+        
+#Service endpoint and port
+server:
+  servlet:
+    context-path: /skyx-airlines/flightbooking
+  port: 9003
+
+#Eureka Client instance 
+eureka:
+  instance:
+    hostname: localhost
+    
+#Logging configuration
+logging:
+  level:
+    root: info
+    com.skyx.reservation.controller: info
